@@ -6,5 +6,51 @@ mixin player
 			.progressbar__time.progressbar__time_now 00:31
 			.progressbar__time.progressbar__time_duration 3:27
 			.progressbar__wrapper
+				// чтобы изменить ширину полосы загрузки - изменяем величину аттрибута width для .progressbar__loadbar
 				.progressbar__loadbar(style="width: 70%;")
-				.progressbar__progress(style="width: 100%;")
+				svg.progressbar__progress(version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="2")
+					defs
+						lineargradient#progressbar-gradient(spreadmethod='pad' x1='0%' y1='0%' x2='100%' y2='0%')
+							stop(offset='0%' style='stop-color:rgb(58, 252, 220);stop-opacity:1;')
+							stop(offset='50%' style='stop-color:rgb(255, 162, 107);stop-opacity:1;')
+							stop(offset='75%' style='stop-color:rgb(255, 11, 141);stop-opacity:1;')
+							stop(offset='100%' style='stop-color:rgb(229, 0, 199);stop-opacity:1;')
+						clipPath#cut-bar
+							// чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath
+							rect(x="0" y="0" width="65%" height="2" rx="1" ry="1")
+					rect(x="0" y="0" width="100%" height="2" rx="1" ry="1" fill="url(#progressbar-gradient)" clip-path="url(#cut-bar)")
+
+		.player__controls.player-controls
+			.player-controls__line
+				.player-controls__left
+					button.player-controls__button.player-controls__button_play(type="button", aria-label="Play", title="Play/Pause")
+					button.player-controls__button.player-controls__button_prev(type="button", aria-label="Previous track", title="Previous track")
+					button.player-controls__button.player-controls__button_next(type="button", aria-label="Next track", title="Next track")
+				.player-controls__rigth
+					button.player-controls__button.player-controls__button_shuffle(type="button", aria-label="Shuffle", title="Shuffle")
+					button.player-controls__button.player-controls__button_repeat(type="button", aria-label="Repeat", title="Repeat")
+			.player-controls__line
+				.player-controls__volume
+					button.player-controls__button.player-controls__button_mute(type="button", aria-label="Mute", title="Mute")
+					.player-controls__volume-progressbar.progressbar.progressbar_volume
+						.progressbar__wrapper
+							svg.progressbar__progress(version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="2")
+								defs
+									clipPath#cut-volume
+										// чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath
+										rect(x="0" y="0" width="65%" height="2" rx="1" ry="1")
+								rect(x="0" y="0" width="100%" height="2" rx="1" ry="1" fill="url(#progressbar-gradient)" clip-path="url(#cut-volume)")
+							.progressbar__handler(style="left: 65%;")
+				.player-controls__balance.balance
+					.balance__line
+						.balance__handler(style="left: 50%;")
+
+		ul.player__vizualizer.vizualizer
+			each col, index in ['70', '180', '320', '600', '1K', '3K', '6K', '12K', '14K', '16K']
+				+vizualizer__column((index + 1) * 10, col)
+
+mixin vizualizer__column(height, text)
+	li.vizualizer__column
+		.vizualizer__column-wrapper
+			.vizualizer__column-graph
+		.vizualizer__column-text= text
