@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="imagetoolbar" content="no">
+    <meta name="msthemecompatible" content="no">
+    <meta name="cleartype" content="on">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="theme-color" content="#ff4167">
+    <link href="css/vendor/nouislider.min.css" rel="stylesheet">
+    <link href="css/main.css?1574275357976" rel="stylesheet">
+    <title>Тест для muzzmania</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="temporary-wrapper">
+        <section class="player">
+          <div class="player__artist">Chuck Berry</div>
+          <div class="player__track-name">Baby Doll Remix by La Femme (YSL)</div>
+          <div class="player__progressbar progressbar">
+            <div class="progressbar__time progressbar__time_now">00:31</div>
+            <div class="progressbar__time progressbar__time_duration">3:27</div>
+            <div class="progressbar__wrapper">
+              <!-- чтобы изменить ширину полосы загрузки - изменяем величину аттрибута width для .progressbar__loadbar-->
+              <div class="progressbar__loadbar" style="width: 70%;"></div>
+              <svg class="progressbar__progress" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="2">
+                <defs>
+                  <lineargradient id="progressbar-gradient" spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                    <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                    <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                  </lineargradient>
+                  <clipPath id="cut-bar">
+                    <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                    <rect x="0" y="0" width="65%" height="2" rx="1" ry="1"></rect>
+                  </clipPath>
+                </defs>
+                <rect x="0" y="0" width="100%" height="2" rx="1" ry="1" fill="url(#progressbar-gradient)" clip-path="url(#cut-bar)"></rect>
+              </svg>
+            </div>
+          </div>
+          <div class="player__controls player-controls">
+            <div class="player-controls__line">
+              <div class="player-controls__left">
+                <button class="player-controls__button player-controls__button_play" type="button" aria-label="Play" title="Play/Pause"></button>
+                <button class="player-controls__button player-controls__button_prev" type="button" aria-label="Previous track" title="Previous track"></button>
+                <button class="player-controls__button player-controls__button_next" type="button" aria-label="Next track" title="Next track"></button>
+              </div>
+              <div class="player-controls__rigth">
+                <button class="player-controls__button player-controls__button_shuffle" type="button" aria-label="Shuffle" title="Shuffle"></button>
+                <button class="player-controls__button player-controls__button_repeat" type="button" aria-label="Repeat" title="Repeat"></button>
+              </div>
+            </div>
+            <div class="player-controls__line">
+              <div class="player-controls__volume">
+                <button class="player-controls__button player-controls__button_mute" type="button" aria-label="Mute" title="Mute"></button>
+                <div class="player-controls__volume-progressbar progressbar progressbar_volume">
+                  <div class="progressbar__wrapper">
+                    <svg class="progressbar__progress" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="2">
+                      <defs>
+                        <clipPath id="cut-volume">
+                          <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                          <rect x="0" y="0" width="65%" height="2" rx="1" ry="1"></rect>
+                        </clipPath>
+                      </defs>
+                      <rect x="0" y="0" width="100%" height="2" rx="1" ry="1" fill="url(#progressbar-gradient)" clip-path="url(#cut-volume)"></rect>
+                    </svg>
+                    <div class="progressbar__handler" style="left: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="player-controls__balance balance">
+                <div class="balance__line">
+                  <div class="balance__handler" style="left: 50%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="player__vizualizer vizualizer">
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 10%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">70</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 20%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">180</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 30%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">320</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 40%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">600</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 50%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">1K</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 60%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">3K</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 70%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">6K</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 80%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">12K</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 90%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">14K</div>
+            </li>
+            <li class="vizualizer__column">
+              <div class="vizualizer__column-wrapper">
+                <!-- для изменения высоты столбца визуализатора меняем height .vizualizer__column-graph-->
+                <div class="vizualizer__column-graph" style="height: 100%">
+                  <svg class="vizualizer__column-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="100%" height="30">
+                    <defs>
+                      <lineargradient id="eq-gradient" spreadmethod="pad" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(58, 252, 220);stop-opacity:1;"></stop>
+                        <stop offset="50%" style="stop-color:rgb(255, 162, 107);stop-opacity:1;"></stop>
+                        <stop offset="75%" style="stop-color:rgb(255, 11, 141);stop-opacity:1;"></stop>
+                        <stop offset="100%" style="stop-color:rgb(229, 0, 199);stop-opacity:1;"></stop>
+                      </lineargradient>
+                      <clipPath id="cut-eq">
+                        <!-- чтобы изменить ширину прогрессбара - изменяем величину аттрибута width для rect в clipPath-->
+                        <rect x="0" y="0" width="100%" height="2"></rect>
+                        <rect x="0" y="3" width="100%" height="2"></rect>
+                        <rect x="0" y="6" width="100%" height="2"></rect>
+                        <rect x="0" y="9" width="100%" height="2"></rect>
+                        <rect x="0" y="12" width="100%" height="2"></rect>
+                        <rect x="0" y="15" width="100%" height="2"></rect>
+                        <rect x="0" y="18" width="100%" height="2"></rect>
+                        <rect x="0" y="21" width="100%" height="2"></rect>
+                        <rect x="0" y="24" width="100%" height="2"></rect>
+                        <rect x="0" y="27" width="100%" height="2"></rect>
+                      </clipPath>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#eq-gradient)" clip-path="url(#cut-eq)"></rect>
+                  </svg>
+                </div>
+              </div>
+              <div class="vizualizer__column-text">16K</div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="js/vendor/nouislider.min.js" defer="defer" async="false"></script>
+    <script src="js/main.js?1574275357976" defer="defer"></script>
+  </body>
+</html>
